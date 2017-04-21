@@ -27,7 +27,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
-   def update
+  def update
     @task = Task.find(params[:id])
 
     if @task.update(task_params)
@@ -40,7 +40,7 @@ class TasksController < ApplicationController
   end
 
   
- def destroy
+  def destroy
     @task = Task.find(params[:id])
     @task.destroy
 
@@ -52,6 +52,6 @@ class TasksController < ApplicationController
 
   # Strong Parameter
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:content, :status)
   end
 end
